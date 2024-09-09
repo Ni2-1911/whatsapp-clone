@@ -1,0 +1,23 @@
+.sidebarContainer {
+  background-color: var(--slate-50);
+  width: 30vw;
+  min-width: 20rem;
+  overflow: scroll;
+}
+.sidebarHeader {
+  height: 5rem;
+}
+.searchBarWrapper {
+  background-color: var(--slate-300);
+  width: 95%;
+  height: 2.3rem;
+}
+.searchBar {
+  background-color: var(--slate-300);
+}
+.contactList {
+  margin-top: 1.5rem;
+}
+.contactItem:hover {
+  background-color: var(--slate-300);
+}

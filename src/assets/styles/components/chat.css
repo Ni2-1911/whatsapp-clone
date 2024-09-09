@@ -1,0 +1,70 @@
+.chatContainer {
+  background-color: var(--slate-300);
+  min-width: 500px;
+  width: 70vw;
+}
+.chatHeader {
+  height: 4rem;
+  background-color: var(--slate-400);
+}
+.chatBox {
+  flex-grow: 1;
+  background: url("/src/assets/images/bg-chat-room.png"), var(--yellow-primary);
+  overflow: scroll;
+  align-items: flex-end;
+  margin-right: "15px";
+}
+.textBox {
+  height: 5rem;
+  background-color: var(--slate-400);
+  flex-shrink: 0;
+}
+.chatTextBox {
+  height: 30%;
+}
+.messageBox {
+  background-color: var(--green-primary);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.2);
+  margin: 0.6rem;
+  padding-left: 10px;
+  max-width: 60%;
+}
+.messageText {
+  font-size: 15px;
+  max-width: 90%;
+  overflow-wrap: break-word;
+  margin: 0.2rem;
+}
+.messageUtil {
+  justify-content: "space-between";
+  box-sizing: border-box;
+  height: 100%;
+}
+.defaultMessage {
+  background-color: var(--yellow-secondary);
+  width: 50%;
+}
+.menu {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: max-content;
+  margin-block: 0.5rem;
+  padding-block: 0.5rem;
+  background-color: var(--slate-50);
+  color: var(--slate-800);
+  border-radius: 0.25rem;
+}
+.menuList {
+  & > menuListItem {
+    list-style: none;
+    &:hover {
+      background-color: var(--slate-300);
+    }
+  }
+}
+.menuListAction {
+  padding: 0.5rem 1rem;
+  display: block;
+}
