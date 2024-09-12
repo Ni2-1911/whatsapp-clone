@@ -1,16 +1,13 @@
-import { useState, useRef, ChangeEvent, KeyboardEvent } from "react";
+import { useRef, KeyboardEvent } from "react";
 import { HandleAddMessage } from "../../../types/type.common";
 export default function TextBox({ addMessage }: { addMessage: HandleAddMessage }) {
-  const [latestMessage, setLatestMessage] = useState<string>("");
+  const latestMessageRef = useRef<HTMLInputElement>(null);
   const sendMessageRef = useRef<HTMLDivElement>(null);
-  function handleLatestMessage(e: ChangeEvent<HTMLInputElement>) {
-    setLatestMessage(e.target.value);
-  }
   function handleSendLatestMessage() {
-    if (latestMessage != "") {
-      addMessage(latestMessage);
+    if (latestMessageRef.current != null && latestMessageRef.current.value != "") {
+      addMessage(latestMessageRef.current.value);
+      latestMessageRef.current.value = "";
     }
-    setLatestMessage("");
   }
   function handleKeyPress(e: KeyboardEvent<HTMLInputElement>) {
     if (e.key === "Enter") {
@@ -27,8 +24,7 @@ export default function TextBox({ addMessage }: { addMessage: HandleAddMessage }
         className="chatTextBox p-3 rounded-sm"
         type="text"
         placeholder="Type a message"
-        value={latestMessage}
-        onChange={handleLatestMessage}
+        ref={latestMessageRef}
         onKeyPress={handleKeyPress}
       />
       <div
